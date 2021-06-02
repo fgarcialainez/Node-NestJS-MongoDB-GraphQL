@@ -1,0 +1,37 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Characteristics {
+  lifespan: String!
+  size: String!
+  coat: String!
+  color: String!
+}
+
+type DogType {
+  breed: String!
+  characteristics: Characteristics!
+}
+
+input CharacteristicsInput {
+  lifespan: String!
+  size: String!
+  coat: String!
+  color: String!
+}
+
+input DogInputType {
+  breed: String!
+  characteristics: CharacteristicsInput!
+}
+
+type Query {
+  dogs: [DogType!]!
+}
+
+type Mutation {
+  createDog(input: DogInputType!): DogType!
+  updateDog(input: DogInputType!, id: String!): DogType!
+  deleteDog(id: String!): DogType!
+}
